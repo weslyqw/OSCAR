@@ -14,16 +14,16 @@ include_once '../objects/cars.php';
 $database = new Database();
 $db = $database->getConnection();
   
-// prepare product object
+// prepare car object
 $car = new Car($db);
   
-// get product id
+// get car id
 $data = json_decode(file_get_contents("php://input"));
   
-// set product id to be deleted
+// set car id to be deleted
 $car->id = $data->id;
   
-// delete the product
+// delete the car
 if($car->delete()){
   
     // set response code - 200 ok
@@ -33,13 +33,13 @@ if($car->delete()){
     echo json_encode(array("message" => "Car with the id of ".$car->id." was deleted."));
 }
   
-// if unable to delete the product
+// if unable to delete the car
 else{
   
     // set response code - 503 service unavailable
     http_response_code(503);
   
     // tell the user
-    echo json_encode(array("message" => "Unable to delete product."));
+    echo json_encode(array("message" => "Unable to delete car."));
 }
 ?>

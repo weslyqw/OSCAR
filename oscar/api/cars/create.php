@@ -30,7 +30,7 @@ if(
     !empty($data->car_year)
     ){
   
-    // set product property values
+    // set car property values
     $car->location = $data->location;
     $car->car_brand = $data->car_brand;
     $car->car_model = $data->car_model;
@@ -48,7 +48,7 @@ if(
     $car->car_type = $data->car_type ?? false;
     $car->created = date("Y-m-d H:i:s");
   
-    // create the product
+    // create the car
     if($car->create()){
   
         // set response code - 201 created

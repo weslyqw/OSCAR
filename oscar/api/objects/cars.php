@@ -173,7 +173,7 @@ class Car{
         // prepare query statement
         $stmt = $this->conn->prepare( $query );
         
-        // bind id of product to be updated
+        // bind id of car to be updated
         $stmt->bindParam(1, $this->id);
         
         // execute query
